@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple search application</title>
+    <meta name="description" content="Simple search application that displays team info based on user input">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="author" content="Richmond Efa Oduro">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style media="screen">
+        @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+        body, html {
+          background-color: #a9d7d1;
+          text-align: center;
+          font-family: 'Raleway', Helvetica, san-serif;
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+        }
+
+        h1 {
+          margin: auto;
+          text-align: center;
+          padding-bottom: 20px;
+        }
+
+        button {
+          cursor: pointer;
+        }
+        #form-outer{
+          margin: auto;
+          width: 75%;
+          max-width: 900px;
+          padding: 20px;
+          background-color: #fff;
+        }
+
+        .label {
+          display: inline-block;
+          padding: 5px;
+          vertical-align: middle;
+        }
+        .input-container {
+          display: inline-block;
+          width: 100%;
+          vertical-align: middle;
+        }
+
+        #input-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        input {
+          height: 20px;
+          width: 100%;
+          padding: 15px 0px 15px 5px;
+          border: 1px solid #c0c0c0;
+          border-radius: 2px;
+          text-align: left;
+          box-sizing: border-box;
+        }
+
+ 
+        .label > input  {
+          width: 10px;
+        }
+
+
+        #result-list-container{
+          border: 1px solid #d2d2d2;
+          margin: 10px 0;
+          background: #fff;
+          display: inline-flex;
+          justify-content: center;
+          width: 100%;
+          box-sizing: border-box;
+        }
+        #resultList {
+          padding: 0;
+          width:100%;
+
+        }
+        li {
+          cursor: pointer;
+          list-style: none;
+          white-space: nowrap;
+        }
+        li.item:hover{
+          background-color:#d2d2d2
+        }
+        .search-history-item {
+          cursor: default;
+          border-bottom: 1px solid #d8d7d7;
+          display: grid;
+          justify-content: space-between;
+          padding: 0 10px;
+          grid-template-columns: 1fr 1fr 0.5fr;
+        }
+        .search-history-item > button {
+          font-size: 15px;
+          border: none;
+          padding: 0;
+          margin: 0;
+        }
+        .search-history-item > span:nth-child(1) {
+          justify-self: start;
+        }
+        #form-inner{
+          width: 50%;
+          margin: 0 auto;
+          position: relative;
+        }
+        #searchHistory{
+          padding: 0;
+        }
+        #deleteSearchHistory {
+          border: none;
+        }
+        #search-history-container > button {
+          text-align: right;
+        }
+        #search-history-title-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        #teamInfoContainer {
+          border-top: 1px solid #d8d7d7;;
+        }
+        #teamResultContainer {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+
+        #teamResultContainer > section {
+          width: 50%;
+        }
+
+        .team-info-container{
+          padding-top: 15px;
+        }
+
+        #teamResultContainer > section.team-info-container > img {
+          width: 50px;
+          height: auto;
+        }
+        .team-info-header{
+          display: none;
+        } 
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Simple search application</h1>
+    <div id="form-outer">
+      <p id="description">Please enter a fotball team</p>
+      <div id="form-inner">
+        <div id="input-container">
+          <div class="label" >
+            <label id="input-label" for="search">Search </label>
+          </div>
+          <div class="input-container">
+            <input type="text" name="search" id="search"  required placeholder="Enter a ..." />
+          </div>
+        </div>
+        <div id="result-list-container">
+          <ul name="result" id="resultList" tabindex="0"></ul>
+        </div>
+        <div id="search-history-container">
+          <div id="search-history-title-container">
+            <p>Search history: </p>
+            <button id="deleteSearchHistory">Clear search history</button>
+          </div>
+            <ul name="result" id="searchHistory"></ul>
+        </div>
+      </div>
+        <article id="teamInfoContainer">
+          <h1 id="teamInfoHeader" class="team-info-header">Team info</h1>
+          <div id="teamResultContainer"></div>
+        </article>
+      </div>
+    <script src="../api/api.js" type="text/javascript"></script>
+  </body>
+</html>
