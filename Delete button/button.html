@@ -1,0 +1,47 @@
+<style>
+button {
+  background: linear-gradient(0.25turn, #f4b05d, #f69d3c); 
+  height: 140px;
+  width: 260;
+  font-size: 37px;
+  border: 1px solid #878787;
+  position: relative;
+  display: flex;
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+button::before {
+  position: absolute;
+  bottom: 10px;
+  content: '';
+}
+
+button::after {
+  content: "\00d7";
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  font-size: 75px;
+  background-color: #fff;
+  color: #000;
+  top: 19px;
+  right: 10px; 
+}
+</style>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Delete button</title>
+  </head>
+  <body>
+    <button type="button" name="delete">
+      Delete 
+    </button>
+  </body>
+</html>
